@@ -1,0 +1,10 @@
+{
+  "name": "poc-express-error-handler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Fernando Reis Guimarães <fernandobhz@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
