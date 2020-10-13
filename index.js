@@ -18,7 +18,12 @@ const pocPrivateErrorHandler = (error, req, res, next) => {
   res.send(msg);
 };
 
+const pocErrorHandlerModifier = (error, req, res, next) => {
+  next(Error(`MODIFIED: ${error.message}`));
+};
+
 app.use("/poc-error-global", pocHandlerError);
+app.use("/poc-error-modifier", [pocHandlerError, pocErrorHandlerModifier]);
 app.use("/poc-error-private", [pocHandlerError, pocPrivateErrorHandler]);
 app.use("/poc-ok", [pocHandlerOk, pocPrivateErrorHandler]);
 
